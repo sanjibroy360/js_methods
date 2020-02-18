@@ -12,35 +12,90 @@
       // Go through todo.md before start solving.
       function countAllPeople() {
         // your code goes here
-        console.log(got);
+        
+        totatlPeople = got.houses.reduce( (acc, cv) => {
+          acc +=  cv.people.map(people => people.name).length;
+          return acc;
+        }, 0);
+
+        console.log(totatlPeople);
       }
 
       function peopleByHouses() {
         // your code goes here
+
+        let ans = got.houses.reduce( (acc, cv) => {
+          acc[cv.name] = cv.people.map(people => people.name).length;
+          return acc;
+        }, {} ) 
+        
+        console.log(ans);
       }
 
       function everyone() {
         // your code goes here
+        let everyoneName = got.houses.reduce( (acc, cv) => {
+          acc.push( cv.people.map(people => people.name) );
+          return acc.flat();
+        }, []);
+
+        console.log(everyoneName);
       }
+      
 
       function nameWithS() {
         // your code goes here
+
+        let allNamesWithS = got.houses.reduce( (acc, cv) => {
+          acc.push(cv.people.map(people => people.name).filter(name => name.includes("s") || name.includes("S")));
+          return acc.flat();
+        }, []);
+
+        console.log(allNamesWithS);
+
       }
 
       function nameWithA() {
         // your code goes here
+
+        let allNamesWithA = got.houses.reduce( (acc, cv) => {
+          acc.push(cv.people.map(people => people.name).filter(name => name.includes("a") || name.includes("A")));
+          return acc.flat();
+        }, []);
+
+        console.log(allNamesWithA);
       }
 
       function surnameWithS() {
         // your code goes here
+
+        let allSurnameWithS = got.houses.reduce( (acc, cv) => {
+          acc.push(cv.people.map(people => people.name).filter(name => name.split(" ")[1].includes("S")));
+          return acc.flat();
+        }, []);
+
+        console.log(allSurnameWithS);
       }
+      
 
       function surnameWithA() {
         // your code goes here
+
+        let allSurnameWithS = got.houses.reduce( (acc, cv) => {
+          acc.push(cv.people.map(people => people.name).filter(name => name.split(" ")[1].includes("A")));
+          return acc.flat();
+        }, []);
+
       }
 
       function peopleNameOfAllHouses() {
         // your code goes here
+
+        let ans = got.houses.reduce( (acc, cv) => {
+          acc[cv.name] = cv.people.map(people => people.name);
+          return acc;
+        }, {} )
+        console.log(ans);
       }
 
       // Testing your result after writing your function

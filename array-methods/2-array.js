@@ -10,6 +10,15 @@ var words = [
 //Write a function findLongestWord that takes an array of words and returns the longest one.
 //If there are 2 with the same length, it should return the first occurrence.
 
+let findLongestWord = strArr => {
+  return strArr.reduce( (acc, cv) =>  {
+    if(cv.length > acc.length) {
+      acc = cv;
+    }
+    return acc;
+  },"")
+}
+
 
 
 
@@ -18,7 +27,8 @@ var numbers1 = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 // Use reduce method of array
 // Use the above sum and calculate the average.
 
-
+let sum = arr => arr.reduce( (acc, cv) => acc + cv, 0 );
+let avg = sum / arr.length ;
 
 
 var numbers2 = [2, 6, 9, 10, 7, 4, 1, 9];
@@ -40,6 +50,9 @@ var words2 = [
   'palace'
 ];
 //Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
+
+let avgLength = str => str.reduce( (acc, cv) => acc + cv.length, 0 );
+
 
 
 

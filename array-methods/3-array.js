@@ -15,6 +15,16 @@ var words = [
 // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
 // (indexOf)
 
+let uniqueArray = arr => {
+  return arr.reduce( (acc, cv) => {
+    if(acc.indexOf(cv) === -1 ) {
+      acc.push(cv);
+      return acc;
+    }
+    return acc;
+  },[] )
+}
+
 
 
 var words2 = [
@@ -30,7 +40,7 @@ var words2 = [
 
 // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
 
-
+let doesWordExist = (str, word) => str.indexOf(word) !== -1;
 
 
 var words3 = [
@@ -50,7 +60,14 @@ var words3 = [
 
 // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
 
-
+let howManyTimes = (arr, word) => {
+  return arr.reduce( (acc, cv) => {
+    if(cv === word) {
+      acc++;
+    }
+    return acc;
+  },0)
+}
 
 
 
@@ -74,7 +91,14 @@ let data = [
   }
 ]
 
-
+let countPop = (data) => {
+  return data.reduce( (acc, cv) => {
+    if(cv.country !== "China") {
+      acc += cv.pop;
+    }
+    return acc;
+  }, 0)
+}
 // Use reduce method and summorize the collection like
 // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
 const fruitBasket = [
@@ -91,6 +115,16 @@ const fruitBasket = [
   'fig'
 ];
 
+let countFruits = arr => {
+  return arr.reduce( (acc, cv) => {
+    if(!acc[cv]) {
+      acc[cv] = 1;
+    } else {
+        acc[cv] += 1;
+    }
+    return acc;
+  }, {} )
+}
 
 
 // Bonus Question (Solve only if you have time)
