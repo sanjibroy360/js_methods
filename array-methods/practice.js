@@ -32,7 +32,15 @@ var cuts = [
 
 var numbers = [1, 2, 3, 4, 5, 6, 23, 121, 345, 33, 23, 12, 435, 642, 66, 23];
 
+
+
+
+
 // forEach
+
+
+
+
 
 //1. Write all the elements along with its index value
 
@@ -136,7 +144,13 @@ let countAlphabets = arr => arr.forEach(el => {
 })
 
 
+
+
+
+
 // Map
+
+
 
 //1. Add "Tasty" before each pizza name.
 
@@ -179,7 +193,14 @@ let binaryConversion = num => num.map(el => el.toString(2));
 let removeVowels = str => str.map(el => el[ Math.floor(el.length / 2) ].charCodeAt())
 
 
+
+
+
+
+
 // Filter 
+
+
 
 //1. Remove all the vowels from the string.
 
@@ -243,7 +264,12 @@ let armstrongNumbers = nums => nums.filter( el => {
 let stringWithEvenLength = nums => nums.filter(el => el.length % 2 === 0);
 
 
+
+
+
 // Reduce
+
+
 
 //1. Sum the ascii values of each element string
 
@@ -331,7 +357,13 @@ let shortestStr = arr => arr.reduce( (acc, cv) => {
   return acc;
 },)
 
+
+
+
+
 // Splice 
+
+
 
 // 1. Remove element whose index is 2 
 
