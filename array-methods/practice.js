@@ -32,6 +32,7 @@ var cuts = [
 
 var numbers = [1, 2, 3, 4, 5, 6, 23, 121, 345, 33, 23, 12, 435, 642, 66, 23];
 
+// forEach
 
 //1. Write all the elements along with its index value
 
@@ -137,7 +138,7 @@ let countAlphabets = arr => arr.forEach(el => {
 
 // Map
 
-//1. Add tasty before each pizza name.
+//1. Add "Tasty" before each pizza name.
 
 let addTasty = pizzaName => pizzaName.map(name => "Tasty" + " " + name) ;
 
@@ -151,7 +152,7 @@ let square = numbers => numbers.map(el => el ** 2);
 
 //4. Make each number 50
 
-let makeArrOf50 = numbers => numbers.map(el => el + (50 - el));
+let makeArrOf50 = numbers => numevenbers.map(el => el + (50 - el));
 
 //5. Make each array element toUpperCase()
 
@@ -224,4 +225,176 @@ let sameDigit = num => num.filter(el => {
   return Number( el.toString().split("")[0].repeat(elementLength) )  === num && (elementLength > 1);
 })
 
-//8. 
+//8. Return all even numbers.
+
+let checkEven = numbers => numbers.filter(el => el % 2 === 0);
+
+//9. Return all armstrong numbers. [ 153 = 1^3 + 5^3 + 3^3]
+
+let armstrongNumbers = nums => nums.filter( el => {
+  let currentNumber = el;
+  let sumOfEachDigitsCubes = (el + "").split("").reduce( (acc, cv) => acc += (cv ** 3),0);
+
+  return currentNumber === sumOfEachDigitsCubes;
+});
+
+//10. Return all string with even length.
+
+let stringWithEvenLength = nums => nums.filter(el => el.length % 2 === 0);
+
+
+// Reduce
+
+//1. Sum the ascii values of each element string
+
+let sumOfAscii = str =>  str.reduce( (acc, cv) => {
+  acc.push( cv.split("").reduce( (acc, cv) => acc + cv.charCodeAt() ,0) );
+  return acc;
+}, [])
+
+//2. Sum of all numbers in the array 
+
+let sumElements = nums => nums.reduce( (acc, cv) => acc + cv, 0 )
+
+//3. Remove duplicate numbers
+
+let removeDuplicateNums = nums => nums.reduce( (acc, cv) => {
+  if(!acc.includes(cv)) {
+    acc.push(cv);
+  }
+  return acc;
+} ,[])
+
+//4. Sum of all even numbers 
+
+let sumOfEvenNums = nums => nums.reduce( (acc, cv) => acc += (cv % 2 == 0) ? cv : 0 ,0 )
+
+//5. Count Occurence of each vowel in each string element
+
+let count = arr => arr.reduce( (acc, cv) => {
+
+  acc.push( cv.split("").reduce( (acc2, cv2) => {
+    let vowels = "aeiou".split("");
+    let pos = vowels.indexOf(cv2);
+
+    if(pos !== -1) {
+      
+      if( acc2[cv2] ) {
+        acc2[cv2] += 1; 
+      } else {
+          acc2[cv2] = 1;
+      }
+    }
+
+    return acc2;
+  },{}) )
+  return acc
+} ,[])
+
+
+//6. Add the even string length
+
+let addEvenLength = arr => arr.reduce( (acc, cv) => acc += (cv.length % 2 === 0) ? cv.length : 0, 0)
+
+//7. Return maximum number 
+
+let maxNum = (nums) => num.reduce( (acc, cv) => {
+  if(cv > acc) {
+    acc = cv;
+  } 
+  return acc;
+},0)
+
+//8. Return shortest string
+
+let shortestStr = arr => arr.reduce( (acc, cv) => {
+  
+  if(cv.length < acc.length) {
+    acc = cv;
+  } 
+  
+  return acc;
+},)
+
+//9. Sum of all odd numbers 
+
+let sumOfEvenNums = nums => nums.reduce( (acc, cv) => acc += (cv % 2 !== 0) ? cv : 0 ,0 )
+
+//10. Return longest string
+
+let shortestStr = arr => arr.reduce( (acc, cv) => {
+  
+  if(cv.length < acc.length) {
+    acc = cv;
+  } 
+  
+  return acc;
+},)
+
+// Splice 
+
+// 1. Remove element whose index is 2 
+
+let remove2ndIndexElement = arr => {
+  arr.splice(2,1);
+  return arr;
+}
+
+// 2. Replace element whose index is 2 with "New Word" 
+
+let replace2ndIndexElement = arr => {
+  arr.splice(2,1,"New Word");
+  return arr;
+}
+
+//3. Replace 3 element from the end.
+
+let remove3ElementFromEnd = arr => {
+  arr.splice(-3,3,"Hello");
+  return arr;
+}
+
+//4. Remove midlle element.
+
+let removeMidElement = arr => {
+  arr.splice( Math.floor(arr.length / 2), 1);
+  return arr;
+}
+
+//5. Remove first element 
+
+let removeFirstElement = arr => {
+  arr.splice(0,1);
+  return arr;
+}
+
+//6. Remove element form any position
+
+let removeFromDesiredPosition = (arr, pos) => {
+  arr.splice(pos,1);
+  return arr;
+}
+
+//7. Remove any number element from the desired postion.
+
+let removeAnyFromAnywhere = (arr,pos,n) => {
+  arr.splice(pos,n);
+  return arr;
+}
+
+//8. Replace any number of elements from any where with any value.
+
+let replaceDesired = (arr,pos,n,word) => {
+  arr.splice(pos,n,word);
+  return arr;
+}
+
+
+
+
+
+
+
+
+
+
