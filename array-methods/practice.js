@@ -340,7 +340,7 @@ let shortestStr = arr => arr.reduce( (acc, cv) => {
 
 //9. Sum of all odd numbers 
 
-let sumOfEvenNums = nums => nums.reduce( (acc, cv) => acc += (cv % 2 !== 0) ? cv : 0 ,0 )
+let sumOfOddNums = nums => nums.reduce( (acc, cv) => acc += (cv % 2 !== 0) ? cv : 0 ,0 )
 
 //10. Return longest string
 
