@@ -41,7 +41,6 @@ var numbers = [1, 2, 3, 4, 5, 6, 23, 121, 345, 33, 23, 12, 435, 642, 66, 23];
 
 
 
-
 //1. Write all the elements along with its index value
 
 let list = arr => arr.forEach((el, i) => console.log(`${i} : ${el}`))
@@ -110,7 +109,7 @@ let primeNums = num => num.forEach(n => {
 
 //8. Make convert each numbers into even number and display.
 
-let makeEven = num => num.forEach(el => el + (el % 2));
+let makeEven = num => num.forEach(el => console.log(el + (el % 2) ) );
 
 //9. Display all the numbers whose sum of digits is even
 
@@ -142,7 +141,6 @@ let countAlphabets = arr => arr.forEach(el => {
   console.log(`${el} : ${count}`);
   
 })
-
 
 
 
@@ -191,8 +189,6 @@ let binaryConversion = num => num.map(el => el.toString(2));
 //10. Return the ascii value of middle character of the string from the array of strings
 
 let removeVowels = str => str.map(el => el[ Math.floor(el.length / 2) ].charCodeAt())
-
-
 
 
 
