@@ -116,7 +116,7 @@ var customers = [
 let nameWithJ = objArr => {
   let ans = [];
   for(let item of  objArr) {
-    if(item["firstname"].startsWith("J")) {
+    if(item.firstname.startsWith("J")) {
       ans.push(item);
     }
   }

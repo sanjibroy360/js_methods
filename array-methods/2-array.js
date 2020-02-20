@@ -34,7 +34,7 @@ let avg = sum / arr.length ;
 var numbers2 = [2, 6, 9, 10, 7, 4, 1, 9];
 //Write a function averageNumbers that receives an array of numbers2 and calculate the average of the numbers
 
-
+let avg = arr => arr.reduce( (acc, cv) => acc + cv, 0 ) / arr.length;
 
 
 var words2 = [

@@ -389,6 +389,18 @@ let replaceDesired = (arr,pos,n,word) => {
   return arr;
 }
 
+//9. Return subarray of the given array.
+
+let cut = (arr, start, end) =>  {
+  return arr.splice(start, (end - start));
+}
+
+//10. Push a value into a desired postion of a array 
+
+let pushValue = (arr, pos, value) => {
+  arr.splice(pos,0,value);
+  return arr;
+} 
 
 
 
