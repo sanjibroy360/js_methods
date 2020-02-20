@@ -18,7 +18,7 @@
           return acc;
         }, 0);
 
-        console.log(totatlPeople);
+        return totatlPeople;
       }
 
       function peopleByHouses() {
@@ -29,7 +29,7 @@
           return acc;
         }, {} ) 
         
-        console.log(ans);
+        return ans;
       }
 
       function everyone() {
@@ -39,7 +39,7 @@
           return acc.flat();
         }, []);
 
-        console.log(everyoneName);
+        return everyoneName;
       }
       
 
@@ -51,7 +51,7 @@
           return acc.flat();
         }, []);
 
-        console.log(allNamesWithS);
+        return allNamesWithS;
 
       }
 
@@ -63,7 +63,7 @@
           return acc.flat();
         }, []);
 
-        console.log(allNamesWithA);
+        return allNamesWithA;
       }
 
       function surnameWithS() {
@@ -74,18 +74,18 @@
           return acc.flat();
         }, []);
 
-        console.log(allSurnameWithS);
+        return allSurnameWithS;
       }
       
 
       function surnameWithA() {
         // your code goes here
 
-        let allSurnameWithS = got.houses.reduce( (acc, cv) => {
+        let allSurnameWithA = got.houses.reduce( (acc, cv) => {
           acc.push(cv.people.map(people => people.name).filter(name => name.split(" ")[1].includes("A")));
           return acc.flat();
         }, []);
-
+        return allSurnameWithA;
       }
 
       function peopleNameOfAllHouses() {
@@ -95,7 +95,7 @@
           acc[cv.name] = cv.people.map(people => people.name);
           return acc;
         }, {} )
-        console.log(ans);
+        return ans;
       }
 
       // Testing your result after writing your function
